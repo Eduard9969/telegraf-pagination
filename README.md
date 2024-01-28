@@ -35,6 +35,28 @@ or
 $ yarn add telegraf-pagination
 ```
 
+Change package.json dependency to use fork
+
+From
+```
+"dependencies" : {
+    "telegraf": "^4.15.3",
+    "telegraf-pagination": "^1.4.1",
+    ...
+}
+```
+
+To
+```
+"dependencies" : {
+    "telegraf": "^4.15.3",
+    "telegraf-pagination": "https://github.com/Eduard9969/telegraf-pagination.git",
+    ...
+}
+```
+
+Run `npm i`
+
 ### Quick start
 
 Default mode
