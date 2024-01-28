@@ -102,7 +102,8 @@ bot.command("pagination", async (ctx) => {
     isButtonsMode: false, // optional. Default value: false. Allows you to display names on buttons (there is support for associative arrays)
     buttonModeOptions: {
       isSimpleArray: true, // optional. Default value: true. Enables/disables support for associative arrays
-      titleKey: '' // optional. Default value: null. If the associative mode is enabled (isSimply: false), determines by which key the title for the button will be taken.
+      title: '' // optional. Default value: null. If the associative mode is enabled (isSimply: false), determines by which key the title for the button will be taken.
+      callback: (item, i) => {} // optional. Default value: null. The custom 'callback' property of each item
     },
     isEnabledDeleteButton: true, // optional. Default value: true
     onSelect: (item, index) => {
@@ -147,6 +148,7 @@ bot.start(async ctx => {
         isButtonsMode: true,
         buttonModeOptions: {
           title: "name", // the 'name' property of each item is displayed
+          callback: (item, i) => "custom_callback " + item.title // the custom 'callback' property of each item
           
           // you can implement complex combinations of item keys using function 👇
           // title: (item, i) => i + 1 + ". " + item.title,
